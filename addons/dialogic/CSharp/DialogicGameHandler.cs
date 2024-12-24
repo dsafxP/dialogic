@@ -108,6 +108,8 @@ public class DialogicGameHandler : IDisposable
 
     public Node Start(Resource timeline) => (Node)_dialogic?.Call(MethodNames.Start, timeline);
 
+    public Node Start(DialogicTimeline timeline) => (Node)_dialogic?.Call(MethodNames.Start, timeline.GetResource);
+
     // Clear the dialogic state
     public void Clear(ClearFlags flags = ClearFlags.FullClear) => _dialogic?.Call(MethodNames.Clear, (int)flags);
 
